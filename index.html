@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <title>DRUM MACHINE</title>
+
+    <script>
+        function play(str){
+            /* Muestra el nombre del div de arriba para comprobar el botón pulsado */
+            if (str === "q" || str === "Q") {
+            document.getElementById('display').innerHTML = "High Drum";
+        } else if(str === "w" || str === "W") {
+           document.getElementById('display').innerHTML = "Medium Drum";
+        } else if(str === "e" || str === "E") {
+           document.getElementById('display').innerHTML = "Hollow Drum";
+        } else if(str === "a" || str === "A") {
+           document.getElementById('display').innerHTML = "Low Drum";
+        } else if(str === "s" || str === "S") {
+           document.getElementById('display').innerHTML = "Windows XP Sound";
+        } else if(str === "d" || str === "D") {
+           document.getElementById('display').innerHTML = "Laughter";
+        } else if(str === "z" || str === "Z") {
+           document.getElementById('display').innerHTML = "Michael Jackson - Hee Heee";
+        } else if(str === "x" || str === "X") {
+           document.getElementById('display').innerHTML = "Goku Scream";
+        } else if(str === "c" || str === "C") {
+           document.getElementById('display').innerHTML = "Pingu - Noot Noot";
+        }
+
+            var audio = document.getElementById(str);
+            audio.play();
+        }
+
+    window.document.onkeyup = function(event){
+        let key = event.key;
+        if (key === "q" || key === "Q") {
+            play("Q");
+        } else if(key === "w" || key === "W") {
+            play("W");
+        } else if(key === "e" || key === "E") {
+            play("E");
+        } else if(key === "a" || key === "A") {
+            play("A");
+        } else if(key === "s" || key === "S") {
+            play("S");
+        } else if(key === "d" || key === "D") {
+            play("D");
+        } else if(key === "z" || key === "Z") {
+            play("Z");
+        } else if(key === "x" || key === "X") {
+            play("X");
+        } else if(key === "c" || key === "C") {
+            play("C");
+        }
+    }
+
+    </script>
+
+    <style>
+        .bg-banner {
+            background: rgb(108, 104, 86);
+            background: radial-gradient(circle, rgba(108, 104, 86, 1) 0%, rgba(138, 45, 213, 1) 43%, rgba(2, 65, 47, 1) 100%);
+        }
+        .gradient-bg {
+            background: rgb(131,58,180);
+            background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,0.639093137254902) 50%, rgba(252,176,69,1) 100%);
+        }
+        #drum-machine{
+            backdrop-filter: blur(5px);
+        }
+
+    </style>
+</head>
+
+<body class="gradient-bg">
+    
+    <div class="container-fluid rounded" id="drum-machine"><h1 class="text-center py-4 bg-banner text-white rounded">DRUM MACHINE</h1>
+        <div class="row">
+            <div class="card my-3 mx-auto col-sm-4 mb-3">
+                <div class="card-body text-center">
+                    <div id="display">No has seleccionado ningún botón</div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <button class="drum-pad btn btn-primary btn-lg col-lg- m-3" id="drum-0" onclick="play('Q')">
+                Q
+                <audio src="./audios/q-drum.mp3" class="clip" id="Q"></audio>
+            </button>
+            <button class="drum-pad btn btn-primary btn-lg col-lg- m-3" id="drum-1" onclick="play('W')">
+                W
+                <audio src="./audios/w-drum.mp3" class="clip" id="W"></audio>
+            </button>
+            <button class="drum-pad btn btn-primary btn-lg col-lg- m-3" id="drum-2" onclick="play('E')">
+                E
+                <audio src="./audios/e-drum.mp3" class="clip" id="E"></audio>
+            </button>
+        </div>
+        <div class="row justify-content-center">
+            <button class="drum-pad btn btn-primary btn-lg col-lg- m-3" id="drum-3" onclick="play('A')">
+                A
+                <audio src="./audios/a-drum.mp3" class="clip" id="A"></audio>
+            </button>
+            <button class="drum-pad btn btn-primary btn-lg col-lg- m-3" id="drum-4" onclick="play('S')">
+                S
+            <audio src="./audios/s-drum.mp3" class="clip" id="S"></audio>
+          </button>
+          <button class="drum-pad btn btn-primary btn-lg col-lg- m-3" id="drum-5" onclick="play('D')">
+            D
+            <audio src="./audios/d-drum.mp3" class="clip" id="D"></audio>
+          </button>
+        </div>
+        <div class="row justify-content-center">
+          <button class="drum-pad btn btn-primary btn-lg col-lg- m-3" id="drum-6" onclick="play('Z')">
+            Z
+            <audio src="./audios/z-drum.mp3" class="clip" id="Z"></audio>
+          </button>
+          <button class="drum-pad btn btn-primary btn-lg col-lg- m-3" id="drum-7" onclick="play('X')">
+            X
+            <audio src="./audios/x-drum.mp3" class="clip" id="X"></audio>
+          </button>
+          <button class="drum-pad btn btn-primary btn-lg col-lg- m-3" id="drum-8" onclick="play('C')">
+            C
+            <audio src="./audios/c-drum.mp3" class="clip" id="C"></audio>
+          </button>
+        </div>
+      </div>
+
+      <div class="text-white text-center mt-5">
+          <h5 class="font-italic">- Juan Manuel Ramos Rodríguez -</h5>
+        <a href="https://www.linkedin.com/in/juan-manuel-ramos-rodriguez/" target="_blank">Linkedin</a> | 
+        <a href="https://github.com/JuanmaRamosRodriguez" target="_blank">Github</a>
+      </div>
+      
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+
+</html>
